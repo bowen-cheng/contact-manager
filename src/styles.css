@@ -1,1 +1,2 @@
-/* You can add global styles to this file, and also import other style files */
+/* A theme is required for Angular Material to work correctly */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
