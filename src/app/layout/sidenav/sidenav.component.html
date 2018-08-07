@@ -1,3 +1,15 @@
-<p>
-  sidenav works!
-</p>
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav
+               mode="side"
+               (opened)="log('open!')"
+               (closed)="log('close!')"
+               class="side-nav">
+    Sidenav content
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p>
+      <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
