@@ -4,9 +4,11 @@
   <!-- The nav bar on the left -->
   <mat-sidenav #sidenav
                mode="side"
-               (opened)="log('open!')"
-               (closed)="log('close!')"
-               class="side-nav">
+               [opened]="!isSmallScreen()"
+               [mode]="isSmallScreen() ? 'over' : 'side'"
+               class="side-nav mat-elevation-z10">
+    <!-- mat-elevation-zX class controls how much shadow is displayed: the greater the X number, the deeper the shadow is -->
+
     <!-- Title of the nav bar -->
     <mat-toolbar color="primary">
       <span>Contacts</span>
