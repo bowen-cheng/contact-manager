@@ -23,10 +23,10 @@
   <!-- The content on the right -->
   <mat-sidenav-content>
     <!-- Title of the content section -->
-    <app-toolbar></app-toolbar>
-    <p>
-      <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
-    </p>
+    <app-toolbar (toggleSideNav)="sidenav.toggle()"></app-toolbar>
+    <div class="wrapper">
+      <app-main-content></app-main-content>
+    </div>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

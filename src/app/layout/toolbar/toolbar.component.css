@@ -1,0 +1,22 @@
+.side-nav-toggle {
+  display: none; /* By default, the toggle button is not displayed */
+  padding: 0;
+  margin: 8px;
+  min-width: 56px;
+}
+
+@media screen and (max-width: 720px) {
+  .side-nav-toggle {
+    display: flex; /* If the screen is smaller than 720px, display the toggle button */
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+mat-icon {
+  font-size: 30px;
+  height: 56px;
+  width: 56px;
+  line-height: 56px;
+  color: white;
+}

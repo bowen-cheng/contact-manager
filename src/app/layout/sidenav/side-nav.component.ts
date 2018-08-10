@@ -3,11 +3,11 @@ import { Component, NgZone, OnInit } from '@angular/core';
 const SMALL_BREAKPOINT = 720;
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  selector: 'app-side-nav',
+  templateUrl: './side-nav.component.html',
+  styleUrls: [ './side-nav.component.css' ]
 })
-export class SidenavComponent implements OnInit {
+export class SideNavComponent implements OnInit {
 
   // This mediaMatcher is a one-shot deal: it returns tells us if there is a match upon component creation
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_BREAKPOINT}px)`);
