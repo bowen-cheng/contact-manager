@@ -24,8 +24,11 @@ export class UserService {
     return this._users.asObservable();
   }
 
-  userById(id: number) {
-    return this.dataStore.users.find(x => x.id === id);
+  getUserById(id: number): User {
+    const user = this.dataStore.users.find((aUser) => aUser.id === id);
+    console.log('user search result');
+    console.log(user);
+    return user;
   }
 
   loadAll() {

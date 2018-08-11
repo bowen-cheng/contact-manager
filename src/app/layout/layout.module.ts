@@ -11,7 +11,7 @@ import { SideNavComponent } from './sidenav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const route: Routes = [
-  { path: 'contacts', component: MainContentComponent }
+  { path: 'contacts/:id', component: MainContentComponent }
 ];
 
 @NgModule({

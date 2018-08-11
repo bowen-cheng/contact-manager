@@ -3,3 +3,12 @@
     Main content
   </h1>
 </mat-card>
+
+<div *ngIf="!!user">
+  <p>
+    {{ user?.name }}
+  </p>
+  <p>
+    {{ user?.bio }}
+  </p>
+</div>
