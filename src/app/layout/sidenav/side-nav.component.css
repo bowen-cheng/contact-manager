@@ -4,12 +4,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px solid aliceblue;
 }
 
 .side-nav {
   width: 240px;
-  border: 1px solid aqua;
 }
 
 .wrapper {

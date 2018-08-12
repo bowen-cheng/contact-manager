@@ -2,7 +2,7 @@
 <mat-sidenav-container class="container">
 
   <!-- The nav bar on the left -->
-  <mat-sidenav #sidenav
+  <mat-sidenav #sideNav
                mode="side"
                [opened]="!isSmallScreen()"
                [mode]="isSmallScreen() ? 'over' : 'side'"
@@ -26,7 +26,7 @@
   <!-- The content on the right -->
   <mat-sidenav-content>
     <!-- Title of the content section -->
-    <app-toolbar (toggleSideNav)="sidenav.toggle()"></app-toolbar>
+    <app-toolbar (toggleSideNav)="sideNav.toggle()"></app-toolbar>
     <div class="wrapper">
       <router-outlet></router-outlet>
     </div>
