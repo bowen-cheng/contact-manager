@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../shared/material.module';
 import { LayoutComponent } from './layout.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { NotesComponent } from './notes/notes.component';
 import { SideNavComponent } from './sidenav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -26,7 +27,8 @@ const route: Routes = [
     MainContentComponent,
     SideNavComponent,
     ToolbarComponent,
-    LayoutComponent
+    LayoutComponent,
+    NotesComponent
   ],
   exports: [
     LayoutComponent
