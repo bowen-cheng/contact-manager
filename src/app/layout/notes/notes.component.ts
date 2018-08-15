@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 import { Note } from '../../model/note';
 
 @Component({
@@ -8,14 +9,14 @@ import { Note } from '../../model/note';
 })
 export class NotesComponent implements OnInit {
 
-  @Input() notes: Note[];
-  dataSource;
-  displayedColumns: string[] = ['id', 'title', 'date'];
+  @Input() protected notes: Note[];
+  protected dataSource: MatTableDataSource<Note>;
+  protected displayedColumns: string[] = ['id', 'title', 'date'];
 
   constructor() { }
 
   ngOnInit() {
-    this.dataSource = this.notes;
+    this.dataSource = new MatTableDataSource<Note>(this.notes);
   }
 
 }
