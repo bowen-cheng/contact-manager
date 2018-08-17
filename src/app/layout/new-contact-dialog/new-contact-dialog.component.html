@@ -1,7 +1,47 @@
+<!-- Title -->
 <h2 mat-dialog-title>Create a new contact</h2>
+
+<!-- Content -->
 <mat-dialog-content>
-  new contact creation form here...
+  <div class="form-container">
+
+    <mat-form-field>
+      <mat-select placeholder="Avatar" [(ngModel)]="user.avatar">
+        <mat-select-trigger>
+          <mat-icon [svgIcon]="user.avatar">{{ user.avatar }}</mat-icon>
+        </mat-select-trigger>
+        <mat-option *ngFor="let avatar of avatars" [value]="avatar">
+          <mat-icon [svgIcon]="avatar"></mat-icon>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Name" #name="ngModel" [(ngModel)]="user.name" required>
+      <mat-error *ngIf="name.invalid">Please enter a name</mat-error>
+    </mat-form-field>
+
+    <!-- The input field of the date picker is disabled -->
+    <mat-form-field>
+      <input matInput
+             placeholder="Birthday"
+             disabled
+             #birthday="ngModel"
+             [(ngModel)]="user.birthDate"
+             [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <!-- The pop-up of the date picker is still enabled -->
+      <mat-datepicker #picker disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="bio" [(ngModel)]="user.bio"></textarea>
+    </mat-form-field>
+
+  </div>
 </mat-dialog-content>
+
+<!-- Buttons -->
 <mat-dialog-actions>
   <button mat-button mat-dialog-close color="primary" (click)="save()">
     <mat-icon>save</mat-icon>save

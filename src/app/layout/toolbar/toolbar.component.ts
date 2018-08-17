@@ -22,7 +22,7 @@ export class ToolbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog closed: ${result}`);
+      console.log('Dialog closed. data submitted: ', result);
     });
   }
 
