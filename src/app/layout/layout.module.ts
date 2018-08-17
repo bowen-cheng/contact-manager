@@ -10,6 +10,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { NotesComponent } from './notes/notes.component';
 import { SideNavComponent } from './sidenav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { NewContactDialogComponent } from './new-contact-dialog/new-contact-dialog.component';
 
 const route: Routes = [
   { path: 'contacts/:id', component: MainContentComponent }
@@ -28,10 +29,14 @@ const route: Routes = [
     SideNavComponent,
     ToolbarComponent,
     LayoutComponent,
-    NotesComponent
+    NotesComponent,
+    NewContactDialogComponent
   ],
   exports: [
     LayoutComponent
+  ],
+  entryComponents: [
+    NewContactDialogComponent
   ]
 })
 export class LayoutModule {}

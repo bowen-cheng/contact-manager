@@ -5,4 +5,16 @@
   </button>
 
   <span>Contacts Manager</span>
+
+  <!-- This element adds some spage and pushes the more_vert button to the right of the tool bar -->
+  <span class="spacer"></span>
+  <!-- this regular button triggers the menu below with [matMenuTriggerFor]="menu" -->
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <!-- This is the actual Material menu element -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openAddContactDialog()">New Contact</button>
+  </mat-menu>
+
 </mat-toolbar>
