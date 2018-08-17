@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 import { User } from '../../model/user';
 
 @Component({
@@ -12,18 +12,29 @@ export class NewContactDialogComponent implements OnInit {
   protected user: User;
   protected avatars = ['svg-1', 'svg-2', 'svg-3', 'svg-4'];
 
-  constructor(private dialogRef: MatDialogRef<NewContactDialogComponent>) { }
+  constructor(private dialogRef: MatDialogRef<NewContactDialogComponent>,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.user = new User();
   }
 
   save() {
+    const message = 'New contact saved! See console for details.';
+    const action = 'Dismiss';
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
     this.dialogRef.close(this.user);
 
   }
 
   close() {
+    const message = 'Change discarded';
+    const action = 'Dismiss';
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
     this.dialogRef.close(undefined);
   }
 
