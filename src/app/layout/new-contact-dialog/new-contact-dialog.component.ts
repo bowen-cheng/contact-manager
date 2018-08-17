@@ -24,6 +24,8 @@ export class NewContactDialogComponent implements OnInit {
     const action = 'Dismiss';
     this.snackBar.open(message, action, {
       duration: 2000,
+    }).onAction().subscribe(() => {
+      console.log('The MatSnackBar is closed by clicking the "Dismiss" button');
     });
     this.dialogRef.close(this.user);
 
@@ -34,6 +36,8 @@ export class NewContactDialogComponent implements OnInit {
     const action = 'Dismiss';
     this.snackBar.open(message, action, {
       duration: 2000,
+    }).onAction().subscribe(() => {
+      console.log('The MatSnackBar is closed by clicking the "Dismiss" button');
     });
     this.dialogRef.close(undefined);
   }
