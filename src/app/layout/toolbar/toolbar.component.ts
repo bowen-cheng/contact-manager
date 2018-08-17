@@ -5,7 +5,7 @@ import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dia
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: [ './toolbar.component.css' ]
+  styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
 
@@ -17,8 +17,12 @@ export class ToolbarComponent implements OnInit {
   }
 
   openAddContactDialog() {
-    this.matDialog.open(NewContactDialogComponent, {
+    const dialogRef = this.matDialog.open(NewContactDialogComponent, {
       minWidth: '50rem'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog closed: ${result}`);
     });
   }
 
